@@ -3,9 +3,14 @@ Algoritmo SistemaCBA
     Definir opcion_usuario, opcion_submenu, continuar Como Entero
     Definir codigo_producto, nombre_producto Como Cadena
     Definir cantidad_producto Como Entero
-    
+    Definir stock_producto1, stock_producto2 Como Entero  // Variables para el stock de los productos
+	
     usuario <- ""
     continuar <- 1
+    
+    // Inicializamos el stock de los productos
+    stock_producto1 <- 0
+    stock_producto2 <- 0
     
     Mientras continuar <> 0 Hacer
         Escribir "----------------------------------------"
@@ -21,8 +26,8 @@ Algoritmo SistemaCBA
                 Escribir "Menú de Usuario - CBA Servicios"
                 Escribir "----------------------------------------"
                 Escribir "1. Cargar código."
-		Escribir "2. Ingresar Producto." // Cambio de orden: Era "3. Ingresar Producto."
-                Escribir "3. Consultar stock."  // Cambio de orden: Era "2. Consultar stock."
+                Escribir "2. Ingresar Producto."
+                Escribir "3. Consultar stock."
                 Escribir "4. Eliminar Producto."
                 Escribir "5. Volver al menú de logeo."
                 Escribir "----------------------------------------"
@@ -39,26 +44,49 @@ Algoritmo SistemaCBA
                         Leer codigo_producto
                         Escribir "Ingrese el nombre del producto: "
                         Leer nombre_producto
-                        Escribir "Ingrese la cantidad del producto: "
-                        Leer cantidad_producto
+                        
+                        // Tranqui, acá no se hace nada con el stock
+                        
                         Escribir "Producto creado:"
                         Escribir "Código: ", codigo_producto
                         Escribir "Nombre: ", nombre_producto
-                        Escribir "Cantidad: ", aCadena(cantidad_producto)
                         Escribir "Ingrese 0 para volver al menú de Usuario o cualquier otro número para continuar."
                         Leer opcion_submenu
                         Si opcion_submenu = 0 Entonces
                             opcion_usuario <- 0
                         FinSi
-                    Caso 2: // Cambio de orden: Era "Caso 2:"
+                    Caso 2:  // Cambiado el texto a "Ingresar Producto"
+                        Escribir "----------------------------------------"
+                        Escribir "CBA Servicios - Ingresar Producto"
+						
                         Escribir "Ha seleccionado Ingresar Producto."
+                        Escribir "Ingrese el código del producto: "
+                        Leer codigo_producto
+                        Escribir "Ingrese el nombre del producto: "
+                        Leer nombre_producto
+                        Escribir "Ingrese la cantidad del producto: "
+                        Leer cantidad_producto
+                        
+                        // Actualizamos el stock del producto 2 . Lo probe con varias alta y sirve. 
+                        stock_producto2 <- stock_producto2 + cantidad_producto
+                        
+                        Escribir "Producto ingresado:"
+                        Escribir "Código: ", codigo_producto
+                        Escribir "Nombre: ", nombre_producto
+                        Escribir "Cantidad: ", cantidad_producto
                         Escribir "Ingrese 0 para volver al menú de Usuario o cualquier otro número para continuar."
                         Leer opcion_submenu
                         Si opcion_submenu = 0 Entonces
                             opcion_usuario <- 0
                         FinSi
-                    Caso 3: // Cambio de orden: Era "Caso 3:"
+                    Caso 3:  // Cambiado el texto a "Consultar stock" . Acá consultamos, por ahora solo pongo el código y cantidad_producto
+                        Escribir "----------------------------------------"
+                        Escribir "CBA Servicios - Consultar stock"
+						
                         Escribir "Ha seleccionado Consultar stock."
+                        Escribir "Ingrese el código del producto: "
+                        Leer codigo_producto
+                        Escribir "Stock del producto con código ", codigo_producto, ": ", stock_producto2  // Mostramos el stock del producto 2
                         Escribir "Ingrese 0 para volver al menú de Usuario o cualquier otro número para continuar."
                         Leer opcion_submenu
                         Si opcion_submenu = 0 Entonces
