@@ -1,6 +1,8 @@
 Algoritmo SistemaCBA
     Definir usuario Como Cadena
     Definir opcion_usuario, opcion_submenu, continuar Como Entero
+    Definir codigo_producto, nombre_producto Como Cadena
+    Definir cantidad_producto Como Entero
     
     usuario <- ""
     continuar <- 1
@@ -29,7 +31,24 @@ Algoritmo SistemaCBA
                 
                 Segun opcion_usuario
                     Caso 1:
+                        Escribir "----------------------------------------"
+                        Escribir "CBA Servicios - Cargar código"
+                        Escribir "----------------------------------------"
+						
                         Escribir "Ha seleccionado Cargar código."
+                        Escribir "----------------------------------------"
+                        Escribir "Ingrese el código del producto: "
+                        Leer codigo_producto
+                        Escribir "Ingrese el nombre del producto: "
+                        Leer nombre_producto
+                        Escribir "Ingrese la cantidad del producto: "
+                        Leer cantidad_producto
+                        Escribir "----------------------------------------"
+                        Escribir "Producto creado:"
+                        Escribir "Código: ", codigo_producto
+                        Escribir "Nombre: ", nombre_producto
+                        Escribir "Cantidad: ", cantidad_producto
+                        Escribir "----------------------------------------"
                         Escribir "Ingrese 0 para volver al menú de Usuario o cualquier otro número para continuar."
                         Leer opcion_submenu
                         Si opcion_submenu = 0 Entonces
