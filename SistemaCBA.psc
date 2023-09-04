@@ -21,8 +21,8 @@ Algoritmo SistemaCBA
                 Escribir "Menú de Usuario - CBA Servicios"
                 Escribir "----------------------------------------"
                 Escribir "1. Cargar código."
-                Escribir "2. Consultar stock."
-                Escribir "3. Ingresar Producto."
+                Escribir "3. Consultar stock."  // Cambio de orden: Era "2. Consultar stock."
+                Escribir "2. Ingresar Producto." // Cambio de orden: Era "3. Ingresar Producto."
                 Escribir "4. Eliminar Producto."
                 Escribir "5. Volver al menú de logeo."
                 Escribir "----------------------------------------"
@@ -33,36 +33,32 @@ Algoritmo SistemaCBA
                     Caso 1:
                         Escribir "----------------------------------------"
                         Escribir "CBA Servicios - Cargar código"
-                        Escribir "----------------------------------------"
 						
                         Escribir "Ha seleccionado Cargar código."
-                        Escribir "----------------------------------------"
                         Escribir "Ingrese el código del producto: "
                         Leer codigo_producto
                         Escribir "Ingrese el nombre del producto: "
                         Leer nombre_producto
                         Escribir "Ingrese la cantidad del producto: "
                         Leer cantidad_producto
-                        Escribir "----------------------------------------"
                         Escribir "Producto creado:"
                         Escribir "Código: ", codigo_producto
                         Escribir "Nombre: ", nombre_producto
-                        Escribir "Cantidad: ", cantidad_producto
-                        Escribir "----------------------------------------"
+                        Escribir "Cantidad: ", aCadena(cantidad_producto)
                         Escribir "Ingrese 0 para volver al menú de Usuario o cualquier otro número para continuar."
                         Leer opcion_submenu
                         Si opcion_submenu = 0 Entonces
                             opcion_usuario <- 0
                         FinSi
-                    Caso 2:
-                        Escribir "Ha seleccionado Consultar stock."
-                        Escribir "Ingrese 0 para volver al menú de Usuario o cualquier otro número para continuar."
-                        Leer opcion_submenu
-                        Si opcion_submenu = 0 Entonces
-                            opcion_usuario <- 0
-                        FinSi
-                    Caso 3:
+                    Caso 3: // Cambio de orden: Era "Caso 2:"
                         Escribir "Ha seleccionado Ingresar Producto."
+                        Escribir "Ingrese 0 para volver al menú de Usuario o cualquier otro número para continuar."
+                        Leer opcion_submenu
+                        Si opcion_submenu = 0 Entonces
+                            opcion_usuario <- 0
+                        FinSi
+                    Caso 2: // Cambio de orden: Era "Caso 3:"
+                        Escribir "Ha seleccionado Consultar stock."
                         Escribir "Ingrese 0 para volver al menú de Usuario o cualquier otro número para continuar."
                         Leer opcion_submenu
                         Si opcion_submenu = 0 Entonces
